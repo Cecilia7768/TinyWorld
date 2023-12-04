@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d2d645654a6df41b437ed3f8e35368, type: 3}
+  m_Name: LifeBase
+  m_EditorClassIdentifier: 
+  objectName: LifeBase
+  buildableCategorySO: {fileID: 11400000, guid: edc50b09b89e57745b8578695405923b, type: 2}
+  objectDescription: 
+  objectToolTipDescription: 
+  objectIcon: {fileID: 21300000, guid: fc961faa163a6744c9f80f6fa5e368f2, type: 3}
+  objectPrefab:
+  - {fileID: 4312435003615764, guid: f70fcd5fd7cbfee46a080036cca3ccdf, type: 3}
+  ghostPrefab: {fileID: 0}
+  placeableGhostMaterial: {fileID: 0}
+  notPlaceableGhostMaterial: {fileID: 0}
+  setBuiltObjectLayer: 0
+  builtObjectLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  showGridBelowObject: 1
+  objectGridCanvas: {fileID: 7023326040891081457, guid: b008e2f959515844dac4c16b66bf9c2b, type: 3}
+  gridImageSprite: {fileID: 21300000, guid: 22ddd633ba392c34e93a0c82a5eb8600, type: 3}
+  gridImagePlaceableColor: {r: 0.33333334, g: 0.98039216, b: 1, a: 1}
+  gridImageNotPlaceableColor: {r: 1, g: 0, b: 0, a: 1}
+  holdToPlace: 0
+  placeAndDeselect: 0
+  enableBuildCondition: 0
+  buildConditionSO: {fileID: 0}
