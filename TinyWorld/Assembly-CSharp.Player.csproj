@@ -93,7 +93,7 @@
     <Compile Include="Assets\Scripts\Life\IState.cs" />
     <Compile Include="Assets\EasyGridBuilder Pro\Scripts\Utilities\Camera &amp; Character Controllers\SwitchControllers.cs" />
     <Compile Include="Assets\EasyGridBuilder Pro\Scripts\Core Grid Scripts\Grid Buildables\BuildableGridObject.cs" />
-    <Compile Include="Assets\Scripts\Life\StateService.cs" />
+    <Compile Include="Assets\Scripts\Life\PlayerStateService.cs" />
     <Compile Include="Assets\Scripts\Definition\ObjectData.cs" />
     <Compile Include="Assets\EasyGridBuilder Pro\Scripts\Core Grid Scripts\Grid Core\Internal\GridXZ.cs" />
     <Compile Include="Assets\EasyGridBuilder Pro\Scripts\Utilities\Camera &amp; Character Controllers\WASDCameraController.cs" />
@@ -109,6 +109,9 @@
     <Compile Include="Assets\EasyGridBuilder Pro\Scripts\ExampleFeatures\Unity Events Sample\ExampleUnityEvents.cs" />
     <Compile Include="Assets\EasyGridBuilder Pro\Scripts\Core Grid Scripts\Grid Scriptable Objects\BuildableEdgeObjectTypeSO.cs" />
     <Compile Include="Assets\EasyGridBuilder Pro\Scripts\Core Grid Scripts\Grid Buildables\BuildableEdgeObject.cs" />
+    <Compile Include="Assets\Scripts\Manager\ProductionSystem.cs" />
+    <Compile Include="Assets\Scripts\Manager\UISystem.cs" />
+    <Compile Include="Assets\Scripts\Life\InvenStateService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

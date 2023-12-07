@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grid
+  - Basic
+  - Collect
   layers:
   - Default
   - TransparentFX
@@ -15,6 +17,7 @@ TagManager:
   - 
   - Walls
   - 
+  - 
   - Water
   - 
   - 
@@ -25,8 +28,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Tree
   - 
   - 
   - 

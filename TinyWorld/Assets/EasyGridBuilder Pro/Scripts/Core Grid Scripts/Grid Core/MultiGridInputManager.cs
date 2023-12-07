@@ -254,6 +254,13 @@ namespace SoulGames.EasyGridBuilderPro
             {
                 easyGridBuilderPro.TriggerGridLoad();
             }
+        }      
+        public void GridLoadKey()
+        {
+            foreach (EasyGridBuilderPro easyGridBuilderPro in easyGridBuilderProList)
+            {
+                easyGridBuilderPro.TriggerGridLoad();
+            }
         }
     }
 }

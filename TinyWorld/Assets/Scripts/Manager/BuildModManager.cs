@@ -1,6 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using SoulGames.Utilities;
+using SoulGames.EasyGridBuilderPro;
 
 public class BuildModManager : MonoBehaviour
 {
@@ -8,6 +13,11 @@ public class BuildModManager : MonoBehaviour
     private GameObject so;
     private bool issoProOn = false;
 
+    private void Start()
+    {
+        EasyGridBuilderPro.Instance.Test_GridLoad();
+        so.SetActive(false);
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.B))

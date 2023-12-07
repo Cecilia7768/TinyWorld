@@ -35,3 +35,22 @@ public struct Status
         get { return happinessMax; }
     }
 }
+
+[System.Serializable]
+public struct InventoryStatus
+{
+    public int foodCount;
+    public int waterCount;
+
+    public int FoodCount
+    {
+        get { return foodCount; }
+        set { foodCount = value; }
+    }  
+    public int WaterCount
+    {
+        get { return waterCount; }
+        set { waterCount = value; }
+    }
+
+}

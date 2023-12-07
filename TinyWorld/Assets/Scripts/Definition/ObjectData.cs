@@ -18,10 +18,25 @@ namespace Definition
     //    }
     //}
 
-    public enum Water
+
+    public enum OBJCategory
     {
-        None,
-        Water = 9,
-        BaseWater,
+        None = -1,
+        Basic,
+        Collect,
     }
+    public enum Basic
+    {
+        None = -1,
+        Water = 10,        
+    }
+
+    public enum Collect
+    { 
+        None = -1,
+        Tree = 20,
+    
+    }
+
+
 }

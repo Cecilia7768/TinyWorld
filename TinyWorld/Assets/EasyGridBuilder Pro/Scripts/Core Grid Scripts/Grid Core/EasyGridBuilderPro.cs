@@ -3522,7 +3522,92 @@ namespace SoulGames.EasyGridBuilderPro
                 if (showConsoleText && saveAndLoad) Debug.Log("Grid XY " + "<color=green>Grid Data Saved!</color>");
             }
         }
+        public void Test_GridLoad()
+        {
+            if (gridAxis == GridAxis.XZ)
+            {
+                if (PlayerPrefs.HasKey(uniqueSaveName + "_XZ"))
+                {
+                    string json = PlayerPrefs.GetString(uniqueSaveName + "_XZ");
+                    json = GridSaveSystem.Load(uniqueSaveName + "_XZ");
+                    SaveObject saveObject = JsonUtility.FromJson<SaveObject>(json);
 
+                    Vector3 tempGridOriginXZ = gridOriginXZ;
+
+                    for (int i = 0; i < gridXZList.Count; i++)
+                    {
+                        GridXZ<GridObjectXZ> gridXZ = gridXZList[i];
+                        gridOriginXZ = gridOriginXZList[i];
+                        foreach (BuildableGridObject.SaveObject placedObjectSaveObject in saveObject.placedObjectSaveObjectArrayArray[i].placedObjectSaveObjectArray)
+                        {
+                            BuildableGridObjectTypeSO buildableGridObjectTypeSO = GetBuildableGridObjectTypeSOFromName(placedObjectSaveObject.buildableGridObjectTypeSOName);
+                            TryPlaceGridObjectXZ(gridXZ, placedObjectSaveObject.origin, buildableGridObjectTypeSO, placedObjectSaveObject.dir, true, out BuildableGridObject buildableGridObject);
+                        }
+                    }
+
+                    for (int i = 0; i < gridXZList.Count; i++)
+                    {
+                        GridXZ<GridObjectXZ> gridXZ = gridXZList[i];
+                        gridOriginXZ = gridOriginXZList[i];
+                        foreach (BuildableEdgeObject.SaveObject placedEdgeObjectSaveObject in saveObject.placedEdgeObjectSaveObjectArrayArray[i].placedEdgeObjectSaveObjectArray)
+                        {
+                            BuildableEdgeObjectTypeSO buildableEdgeObjectTypeSO = GetBuildableEdgeObjectTypeSOFromName(placedEdgeObjectSaveObject.buildableEdgeObjectTypeSOName);
+                            TryPlaceEdgeObjectXZ(gridXZ, placedEdgeObjectSaveObject.origin, buildableEdgeObjectTypeSO, placedEdgeObjectSaveObject.dir, placedEdgeObjectSaveObject.edgeRotation, placedEdgeObjectSaveObject.mousePosition, true, out BuildableEdgeObject buildableEdgeObject);
+                        }
+                    }
+
+                    foreach (LooseSaveObject looseSaveObject in saveObject.looseSaveObjectArray)
+                    {
+                        TryPlaceFreeObjectXZ(
+                            GetBuildableFreeObjectTypeSOFromName(looseSaveObject.looseObjectSOName),
+                            looseSaveObject.position,
+                            looseSaveObject.quaternion,
+                            true,
+                            out BuildableFreeObject obj
+                        );
+                    }
+
+                    gridOriginXZ = tempGridOriginXZ;
+                }
+                if (showConsoleText && saveAndLoad) Debug.Log("Grid XZ " + "<color=green>Grid Data Loaded!</color>");
+            }
+            else
+            {
+                if (PlayerPrefs.HasKey(uniqueSaveName + "_XY"))
+                {
+                    string json = PlayerPrefs.GetString(uniqueSaveName + "_XY");
+                    json = GridSaveSystem.Load(uniqueSaveName + "_XY");
+                    SaveObject saveObject = JsonUtility.FromJson<SaveObject>(json);
+
+                    Vector3 tempGridOriginXY = gridOriginXY;
+
+                    for (int i = 0; i < gridXYList.Count; i++)
+                    {
+                        GridXY<GridObjectXY> gridXY = gridXYList[i];
+                        gridOriginXY = gridOriginXYList[i];
+                        foreach (BuildableGridObject.SaveObject placedObjectSaveObject in saveObject.placedObjectSaveObjectArrayArray[i].placedObjectSaveObjectArray)
+                        {
+                            BuildableGridObjectTypeSO placedObjectTypeSO = GetBuildableGridObjectTypeSOFromName(placedObjectSaveObject.buildableGridObjectTypeSOName);
+                            TryPlaceGridObjectXY(gridXY, placedObjectSaveObject.origin, placedObjectTypeSO, placedObjectSaveObject.dir, true, out BuildableGridObject buildableGridObject);
+                        }
+                    }
+
+                    foreach (LooseSaveObject looseSaveObject in saveObject.looseSaveObjectArray)
+                    {
+                        TryPlaceFreeObjectXY(
+                            GetBuildableFreeObjectTypeSOFromName(looseSaveObject.looseObjectSOName),
+                            looseSaveObject.position,
+                            looseSaveObject.quaternion,
+                            true,
+                            out BuildableFreeObject obj
+                        );
+                    }
+
+                    gridOriginXY = tempGridOriginXY;
+                }
+                if (showConsoleText && saveAndLoad) Debug.Log("Grid XY " + "<color=green>Grid Data Loaded!</color>");
+            }
+        }
         private void GridLoad()
         {
             if (gridAxis == GridAxis.XZ)

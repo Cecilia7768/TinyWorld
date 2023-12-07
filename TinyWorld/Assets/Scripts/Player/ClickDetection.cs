@@ -24,7 +24,7 @@ public class ClickDetection : MonoBehaviour
             {
                 // 감지된 물체의 이름을 디버그 로그로 출력
                 Debug.Log("클릭한 물체: " + hit.collider.gameObject.layer);
-                SystemManager.Instance.istate.TypeClassification(hit.collider.gameObject);
+                SystemManager.Instance.istate.TypeClassification(hit.collider.gameObject);                
 
                 //hit.collider.gameObject.layer;
             }
