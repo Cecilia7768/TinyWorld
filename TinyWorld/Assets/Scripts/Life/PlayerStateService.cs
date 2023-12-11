@@ -61,7 +61,7 @@ public class PlayerStateService : MonoBehaviour, IState
                 case OBJCategory.Basic:
                     //여기서 기본 아이템 중 어떤 분류인지로 나뉨
                     //카테고리별 액션이 들어가야함
-                    TypeClass_Basic(obj.layer);
+                    TypeClass_BasicType(obj.layer);
                     break;
                 case OBJCategory.Collect:
                     break;
@@ -73,11 +73,11 @@ public class PlayerStateService : MonoBehaviour, IState
     /// Basic Objects
     /// 상수 부분 나중에 가시성있게 정리좀
     /// </summary>
-    public void TypeClass_Basic(int type)
+    public void TypeClass_BasicType(int type)
     {
         switch (type)
         {
-            case (int)Basic.Water:
+            case (int)ItemType.Water:
                 ChangeThirst(30f);
                 break;
         }
